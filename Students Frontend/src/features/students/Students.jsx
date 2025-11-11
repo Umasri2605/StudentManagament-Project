@@ -33,7 +33,6 @@ function Students(){
                         <th>Age</th>
                         <th>Gender</th>
                         <th>Course</th>
-                        <th>Education</th>
                     </tr>
                 </thead>
                 <tbody>

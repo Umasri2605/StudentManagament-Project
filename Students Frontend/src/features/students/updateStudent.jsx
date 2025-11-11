@@ -15,10 +15,10 @@ function UpdateStudent(){
     var studentForm=useFormik({
             initialValues:{
               "name":"",
-              "age":"",
+              "age": "",
               "gender":"",
               "course":"",
-              "education":""
+
             },
             onSubmit:(values)=>{
                 updateStudentFn(values).then(()=>{
@@ -45,7 +45,6 @@ function UpdateStudent(){
             <input type="text" {...studentForm.getFieldProps("age")}/><br/>
             <input type="text" {...studentForm.getFieldProps("gender")}/><br/>
             <input type="text" {...studentForm.getFieldProps("course")}/><br/>
-            <input type="text" {...studentForm.getFieldProps("education")}/><br/>
             <button className="btn btn-success" >UpdateStudent</button>
           </form>
           }

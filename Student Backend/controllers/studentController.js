@@ -20,12 +20,24 @@ exports.getStudentById = async (req, res) => {
     }
   };
 
+// exports.addStudent = async (req, res) => {
+//   try {
+//     const newStudent = new studentsdataModel(req.body);
+//     const savedStudent = await newStudent.save();
+//     res.status(201).json(savedStudent);
+//   } catch (err) {
+//     res.status(400).json({ message: err.message });
+//   }
+// };
+
 exports.addStudent = async (req, res) => {
   try {
+    console.log("Incoming data:", req.body); 
     const newStudent = new studentsdataModel(req.body);
     const savedStudent = await newStudent.save();
     res.status(201).json(savedStudent);
   } catch (err) {
+    console.error("Error while adding:", err);
     res.status(400).json({ message: err.message });
   }
 };
