@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDeleteStudentMutation, useGetAllStudentsQuery, useLazyGetAllStudentsQuery } from "../../services/studentsApi";
 function Students(){
@@ -6,7 +6,12 @@ function Students(){
    var [deleteStudentFn]=useDeleteStudentMutation();
    var [getAllStudentsFn]=useLazyGetAllStudentsQuery();
    console.log(data);
-    function deleteStudent(id){
+
+   useEffect(()=>{
+    getAllStudentsFn();
+   })
+    
+   function deleteStudent(id){
         deleteStudentFn(id).then((res)=>{
             console.log(res);
             getAllStudentsFn();
